@@ -1,12 +1,6 @@
 import 'dart:async';
-import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_meeting/zoom_options.dart';
-import 'package:flutter_zoom_meeting/zoom_view.dart';
-import 'package:flutter_zoom_example/services/zoom_api.dart';
-import 'package:flutter_zoom_example/zoom/jwt.dart';
 import 'package:flutter_zoom_example/zoom/zoom_functions.dart';
 
 
@@ -44,26 +38,34 @@ class _MeetingWidgetState extends State<MeetingWidget> {
                   // The basic Material Design action button.
                   return ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue, // background
-                      onPrimary: Colors.white, // foreground
+                      backgroundColor: Colors.blue, // background
+                      foregroundColor: Colors.white, // foreground
                     ),
                     onPressed: ()  async{
                       {
 
-                        var responseToken =await generateZoomAccessToken();
+                      //   var responseToken =await generateZoomAccessToken();
 
-                        String zoomAccessToken=responseToken['access_token'];
+                      //   String zoomAccessToken=responseToken['access_token'];
 
 
 
-                       var responseMeeting =await createMeeting(zoomAccessToken);
+                      //  var responseMeeting =await createMeeting(zoomAccessToken);
+
+
+                      //   joinMeeting(
+                      //       meetingId: responseMeeting['id'].toString(),
+                      //       zoomAccessToken: zoomAccessToken,
+                      //       displayName: 'Zoualfkar',
+                      //       password: responseMeeting['password']
+                      //   );
 
 
                         joinMeeting(
-                            meetingId: responseMeeting['id'].toString(),
-                            zoomAccessToken: zoomAccessToken,
+                            meetingId:'',
+                            zoomAccessToken: 'YOUR_TOKEN' ,
                             displayName: 'Zoualfkar',
-                            password: responseMeeting['password']
+                            password: '',
                         );
                       }
                     },
@@ -79,29 +81,29 @@ class _MeetingWidgetState extends State<MeetingWidget> {
                 builder: (context) {
                   return ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue, // background
-                      onPrimary: Colors.white, // foreground
+                      backgroundColor: Colors.blue, // background
+                      foregroundColor: Colors.white, // foreground
                     ),
                     onPressed: () async{
 
-                      var responseToken =await generateZoomAccessToken();
+                      // var responseToken =await generateZoomAccessToken();
 
-                      String zoomAccessToken=responseToken['access_token'];
-
-
-
-                      var responseMeeting =await createMeeting(zoomAccessToken);
+                      // String zoomAccessToken=responseToken['access_token'];
 
 
 
+                      // var responseMeeting =await createMeeting(zoomAccessToken);
 
 
-                      startMeeting(
-                        meetingId: responseMeeting['id'].toString(),
-                        displayName: 'Zoualfkar',
-                        zoomAccessToken: extractTextAfterZak(responseMeeting['start_url']),
 
-                    );
+
+
+                    //   startMeeting(
+                    //     meetingId: responseMeeting['id'].toString(),
+                    //     displayName: 'Zoualfkar',
+                    //     zoomAccessToken: extractTextAfterZak(responseMeeting['start_url']),
+
+                    // );
 
                       },
                     child: const Text('Start Meeting'),

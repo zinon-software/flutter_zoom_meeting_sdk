@@ -32,7 +32,8 @@ joinMeeting({
 
   ZoomOptions zoomOptions = ZoomOptions(
       domain: "zoom.us",
-      jwtToken: generateZoomJWT()
+      // jwtToken: generateZoomJWT()
+      jwtToken: zoomAccessToken,
   );
   var meetingOptions = ZoomMeetingOptions(
       zoomAccessToken:zoomAccessToken,
